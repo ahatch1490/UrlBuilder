@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 namespace UrlBuilder
 {
     /// <summary>
-    /// used internaly to generate urls to the moxiworks api
+    /// used to generate urls 
     /// </summary>
     public class UrlBuilder
     {
