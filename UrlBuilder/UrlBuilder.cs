@@ -23,7 +23,7 @@ namespace UrlBuilder
         /// Takes the host and path as separate urls 
         /// </summary>
         /// <param name="host">http://www.examnple.com</param>
-        /// <param name="path">/foo/bar/ba/<param>
+        /// <param name="path">/foo/bar/ba/</param>
         public UrlBuilder(string host, string path = "")
         {
             Host = new Uri(host).Host;
