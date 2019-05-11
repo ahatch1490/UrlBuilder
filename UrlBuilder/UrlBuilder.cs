@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
-using System.Configuration;
-using System.Runtime.CompilerServices;
-
 
 namespace UrlBuilder
 {
@@ -30,7 +26,6 @@ namespace UrlBuilder
             var uri = new Uri(Host + path);
             BuildParamsFromUrl(uri.Query);
             Path = new Uri(uri.OriginalString.Split('?')[0]);
-
         }
 
         public UrlBuilder(string url)
@@ -39,7 +34,6 @@ namespace UrlBuilder
             Host = uri.Host;
             BuildParamsFromUrl(uri.Query);
             Path = new Uri(uri.OriginalString.Split('?')[0]);
-
         }
 
         /// <summary>
@@ -85,6 +79,7 @@ namespace UrlBuilder
             QueryParameters.Add(key,value.Value.ToString());
             return this;
         }
+        
        /// <summary>
        /// Adds a boolean query parameter 
        /// </summary>
@@ -118,7 +113,6 @@ namespace UrlBuilder
             return this; 
         }
 
-
         private int GetTimeStamp(DateTime value)
         {
             return (int)Math.Truncate(value.ToUniversalTime().Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
@@ -146,8 +140,6 @@ namespace UrlBuilder
                 var value = item.Split('=');
                 QueryParameters.Add(value[0],value[1]);
             }
-
         }
-
     }
 }
