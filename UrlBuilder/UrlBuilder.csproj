@@ -2,6 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>AnthonyHatch.UrlBuilder</PackageId>
+        <PackageVersion>1.0.0.0</PackageVersion>
+        <Authors>Anthony Hatch</Authors>
+        <Description>Little tool I use to generate urls with params</Description>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageReleaseNotes>
+            First Nuget build
+        </PackageReleaseNotes>
+        <PackageTags>Url Builder Generators</PackageTags>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
     </PropertyGroup>
 
 </Project>
