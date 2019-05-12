@@ -17,16 +17,15 @@ Give examples
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Packge Manager
+```
+PM> Install-Package AnthonyHatch.UrlBuilder -Version 1.0.0
+```
+
+.Net CLI
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+$> dotnet add package AnthonyHatch.UrlBuilder --version 1.0.0
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -39,16 +38,8 @@ $> dotnet test
 ## Built With
 
 * [Rider](https://www.jetbrains.com/rider/) - IDE
-* [Nuget](https://maven.apache.org/) - Dependency Management
+* [Nuget](https://www.nuget.org/) - Dependency Management
 
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
