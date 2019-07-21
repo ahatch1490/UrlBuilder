@@ -90,5 +90,14 @@ namespace UrlBuilder.Test
             Assert.Contains($"&q2={guid}", uri.OriginalString);
         }
         
+        
+        [Fact]
+        public void ShouldThrowUnableToParseUrlString()
+        {
+            string url = "foobar.badurl";
+            var guid = Guid.NewGuid();
+            Assert.Throws<UrlBuilderFormatException>(() => new UrlBuilder(url).AddQueryParameter("client", guid.ToString()));
+        }
+        
     }
 }

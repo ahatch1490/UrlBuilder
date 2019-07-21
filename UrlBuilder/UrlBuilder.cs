@@ -22,18 +22,34 @@ namespace UrlBuilder
         /// <param name="path">/foo/bar/ba/</param>
         public UrlBuilder(string host, string path = "")
         {
-            Host = new Uri(host).Host;
-            var uri = new Uri(Host + path);
-            BuildParamsFromUrl(uri.Query);
-            Path = new Uri(uri.OriginalString.Split('?')[0]);
+            try
+            {
+                Host = new Uri(host).Host;
+                var uri = new Uri(Host + path);
+                BuildParamsFromUrl(uri.Query);
+                Path = new Uri(uri.OriginalString.Split('?')[0]);
+            }
+            catch (System.UriFormatException ex)
+            {
+                throw new UrlBuilderFormatException(host + Path);
+            }
+
+
         }
 
         public UrlBuilder(string url)
         {
-            var uri = new Uri(url); 
-            Host = uri.Host;
-            BuildParamsFromUrl(uri.Query);
-            Path = new Uri(uri.OriginalString.Split('?')[0]);
+            try
+            {
+                 var uri = new Uri(url);
+                 Host = uri.Host;
+                 BuildParamsFromUrl(uri.Query);
+                 Path = new Uri(uri.OriginalString.Split('?')[0]);
+            }
+            catch (System.UriFormatException ex)
+            {
+                throw new UrlBuilderFormatException(url);
+            }
         }
 
         /// <summary>
@@ -43,6 +59,27 @@ namespace UrlBuilder
         public string GetUrl()
         {
             return Path + BuildQueryString();
+        }
+
+        /// <summary>
+        /// Returns a URI Object
+        /// </summary>
+        /// <returns>url string as URI object</returns>
+        /// <exception cref="UrlBuilderFormatException"></exception>
+        public Uri GetUri()
+        {
+            var url = GetUrl() ?? string.Empty;
+            Uri uri = null;
+            try
+            {
+                uri = new Uri(url);
+            }
+            catch (System.UriFormatException ex)
+            {
+                throw new UrlBuilderFormatException(GetUrl());
+            }
+
+            return uri;
         }
 
         /// <summary>
