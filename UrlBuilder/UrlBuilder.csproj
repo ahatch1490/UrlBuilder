@@ -3,16 +3,16 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>AnthonyHatch.UrlBuilder</PackageId>
-        <PackageVersion>1.0.0.0</PackageVersion>
+        <PackageVersion>1.0.1.0</PackageVersion>
         <Authors>Anthony Hatch</Authors>
         <Description>Little tool I use to generate urls with params</Description>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageReleaseNotes>
-            First Nuget build
+           adding uri output when generating url
         </PackageReleaseNotes>
         <PackageTags>Url Builder Generators</PackageTags>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0.0.0</FileVersion>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <FileVersion>1.0.1.0</FileVersion>
     </PropertyGroup>
 
 </Project>
