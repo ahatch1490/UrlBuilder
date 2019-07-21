@@ -64,7 +64,7 @@ namespace UrlBuilder.Test
             const string host = "http://www.example.com/foo/bar";
             var builder = new UrlBuilder(host);
             builder.AddQueryParameter("bool",true);
-            
+             
             Assert.Equal(expected,builder.GetUrl());
         }
         
@@ -77,6 +77,17 @@ namespace UrlBuilder.Test
             builder.AddQueryParameter("integer",2);
             
             Assert.Equal(expected,builder.GetUrl());
+        }
+        
+        [Fact]
+        public void ShouldReturnAValidParamsGivenExistingParams()
+        {
+            var url = "https://tonquinfunctions-prod.azurewebsites.net/api/SalesForceClientToContactSync?q1=foobarbaz3980897897";
+            var guid = Guid.NewGuid();
+            var builder = new UrlBuilder(url).AddQueryParameter("q2", guid.ToString());
+            var newUrl = builder.GetUrl();
+            var uri = new Uri(newUrl);
+            Assert.Contains($"&q2={guid}", uri.OriginalString);
         }
         
     }
